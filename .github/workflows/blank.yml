@@ -9,6 +9,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  pull-requests: write
+  contents: write
+  repository-projects: write
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -24,7 +29,7 @@ jobs:
           T=`cat ./0/a.md` && D=`date` > ./0/b.md
           git config user.name  "actions-user"
           git config user.email "action@github.com"
-          git add .
+          git add -all
           git commit -m "generated"
           git push
 
