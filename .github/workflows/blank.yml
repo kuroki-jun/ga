@@ -20,8 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: bash
-        run: 
-      - run: |
+        run: |
           T=`cat ./0/a.md` && D=`date` > ./0/b.md
           git config user.name  "actions-user"
           git config user.email "action@github.com"
